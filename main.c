@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/08 14:00:56 by hhismans          #+#    #+#             */
-/*   Updated: 2015/01/20 12:06:38 by jchichep         ###   ########.fr       */
+/*   Updated: 2015/01/20 12:42:45 by pba              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,11 @@ int			main(void)
 	char tab[21][61];
 	int j1 = 8;
 	int j2 = 8;
+	t_ball ball;
 
 	ft_filltab(tab);
 	add_players(tab);
+	add_ball(&ball, tab);
 	while (key != 5)
 	{
 		key = getarrowkey();
@@ -90,6 +92,7 @@ int			main(void)
 		else if (key == 4)
 			move_player(2, 1, &j2, tab);
 		system("CLEAR");
+		move_ball(&ball, tab);
 		ft_puttab(tab);
 		usleep(10000);
 	}
