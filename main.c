@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/08 14:00:56 by hhismans          #+#    #+#             */
-/*   Updated: 2015/01/20 11:24:41 by jchichep         ###   ########.fr       */
+/*   Updated: 2015/01/20 11:44:24 by pba              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int			main(void)
 {
 	int key = 0;
 	char tab[21][61];
-	int j1 = 8;
-	int j2 = 8;
+	//int j1 = 8;
+	//int j2 = 8;
 
 	ft_filltab(tab);
 	add_players(tab);
@@ -92,4 +92,5 @@ int			main(void)
 			write(1, "S\n", 2);
 		usleep(100000);
 	}
+	return (0);
 }
