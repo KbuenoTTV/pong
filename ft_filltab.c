@@ -6,31 +6,43 @@
 /*   By: pba <pba@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:44:20 by pba               #+#    #+#             */
-/*   Updated: 2015/01/20 11:01:03 by pba              ###   ########.fr       */
+/*   Updated: 2015/01/20 11:22:05 by jchichep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void			ft_filltab(char tab[60][20])
+#include <stdlib.h>
+
+void			ft_filltab(char tab[21][61])
 {
 	int			i;
+	int			j;
 
 	i = 0;
-	while (tab)
+	j = 0;
+	while (i < 20)
 	{
+		if (i == 0 || i == 19)
+		{
+			while (j < 60)
+			{
+				tab[i][j] = '#';
+				++j;
+			}
+		}
+		else
+		{
+			while (j < 60)
+			{
+				if (j == 0 || j == 59)
+					tab[i][j] = '#';
+				else
+					tab[i][j] = ' ';
+				++j;
+			}
+		}
+		tab[i][j] = '\0';
 		j = 0;
-		if (i == 0 || i == 59)
-		{
-			while (tab[i][j])
-				tab[i][j] = '*';
-			j = 0;
-		}
-		while (tab[i][j])
-		{
-			if (j = 0 || j = 19)
-				tab[i][j] = '*';
-			tab[i][j] = ' ';
-			++j;
-		}
 		++i;
 	}
+	tab[20][0] = '\0';
 }
