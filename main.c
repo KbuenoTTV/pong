@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/08 14:00:56 by hhismans          #+#    #+#             */
-/*   Updated: 2015/01/20 11:44:24 by pba              ###   ########.fr       */
+/*   Updated: 2015/01/20 12:06:38 by jchichep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ static int	getarrowkey(void)
 	if ((d = 0), kbhit())
 		while ((c = fgetc(stdin)))
 		{
-			d = (c == 'q' ? 0 : d);
+			d = (c == 'q' ? 5 : d);
 			d = (c == 'w' ? 1 : d);
-			d = (c == 65 ? 2 : d);
-			d = (c == 66 ? 3 : d);
-			d = (c == 's' ? 4 : d);
+			d = (c == 65 ? 3 : d);
+			d = (c == 66 ? 4 : d);
+			d = (c == 's' ? 2 : d);
 			if (d)
 				return (d);
 		}
@@ -73,24 +73,25 @@ int			main(void)
 {
 	int key = 0;
 	char tab[21][61];
-	//int j1 = 8;
-	//int j2 = 8;
+	int j1 = 8;
+	int j2 = 8;
 
 	ft_filltab(tab);
 	add_players(tab);
-	ft_puttab(tab);
-	while (key != 'q')
+	while (key != 5)
 	{
 		key = getarrowkey();
 		if (key == 1)
-			write(1, "W\n", 2);
+			move_player(1, -1, &j1, tab);
 		else if (key == 2)
-			write(1, "fleche haut\n", 12);
+			move_player(1, 1, &j1, tab);
 		else if (key == 3)
-			write(1, "fleche bas\n", 11);
+			move_player(2, -1, &j2, tab);
 		else if (key == 4)
-			write(1, "S\n", 2);
-		usleep(100000);
+			move_player(2, 1, &j2, tab);
+		system("CLEAR");
+		ft_puttab(tab);
+		usleep(10000);
 	}
 	return (0);
 }
