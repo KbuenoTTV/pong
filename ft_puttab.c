@@ -6,15 +6,15 @@
 /*   By: pba <pba@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:19:20 by pba               #+#    #+#             */
-/*   Updated: 2015/01/20 10:33:28 by pba              ###   ########.fr       */
+/*   Updated: 2015/01/20 10:39:56 by jchichep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void			ft_puttab(char **tab)
+void			ft_puttab(char tab[60][20])
 {
 	while (tab)
 	{
-		ft_putstr(*tab)
+		ft_putstr(*tab);
 		++tab;
 	}
 }

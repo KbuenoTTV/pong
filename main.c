@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/08 14:00:56 by hhismans          #+#    #+#             */
-/*   Updated: 2015/01/20 10:18:22 by jchichep         ###   ########.fr       */
+/*   Updated: 2015/01/20 10:39:24 by jchichep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include "pong.h"
+
 
 static int	kbhit(void)
 {
@@ -70,7 +72,7 @@ static int	getarrowkey(void)
 int			main(void)
 {
 	int key = 0;
-	char tab[20][60] = {
+	char tab[60][20] = {
 		{"############################################################"},
 		{"#                                                          #"},
 		{"#                                                          #"},
@@ -93,6 +95,7 @@ int			main(void)
 		{"############################################################"},
 	};
 
+	ft_puttab(tab);
 	while (key != 'q')
 	{
 		key = getarrowkey();
